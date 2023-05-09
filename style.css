@@ -1,0 +1,242 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    font-size: 14px;
+    color: hsl(0, 0%, 25%);
+}
+
+/*Сдлеать картинки адаптивными*/
+/*Make images adaptive*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header .navbar-brand {
+    font-family: 'Nosifer', cursive;
+    font-size: 2.5rem;
+    letter-spacing: .1rem;
+}
+
+/*Меню навигационной панели*/
+/*Navigation panel menu*/
+header .nav-item {
+    font-family: 'Croissant One', cursive;
+    text-transform: uppercase;
+    margin-left: 2rem; /*!!!!!!!!!!!!!!!!!!*/
+    font-size: 1rem;
+    transition: transform .3s linear;
+}
+
+/*При наведении на каждый элемент из меню панели навигации будет увеличиваться 
+не задевая соседний элемент*/
+/*When you hover over each item from the navigation bar menu, the item will increase
+without touching the neighboring element*/
+header .nav-item:hover {
+/*transform позволяет не влиять на соседние элементы при анимации*/
+/*transform allows you not to affect neighboring elements during animation*/
+    transform: scale(1.1) 
+}
+
+/*настраиваем "подчеркивание" элемента меню навигации используем псевдо элемент "после"*/
+/*setting up the "underline" of the navigation menu item using the pseudo element "after"*/
+header .nav-item a::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    background-color: hsl(210, 10%, 23%);
+    height: 1px;
+    transform: scale(0);
+    transition: transform .3s linear;
+}
+
+/*Анимируем подчеркивание, переход из невидимого состояния scale(0) в видимое scale(1)*/
+/*Animating the underscore, the transition from the invisible state scale(0) to the visible scale(1)*/
+header .nav-item a:hover::after {
+    transform: scale(1);
+}
+
+/*РАЗДЕЛ ОДИНОЧНЫЙ ПОСТ*/
+/*SINGLE POST SECTION*/
+.post-category, .link-more {
+    font-family: 'Croissant One', cursive;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+    color: hsla(0, 0%, 0%, .4)
+}
+
+/*Черный цвет при наведении на "оставить комент"*/
+/*Black color when hovering over "leave comment"*/
+.link-more:hover {
+    color: hsl(210, 10%, 23%);
+    text-decoration: none;
+}
+
+/*Стиль для основного текста*/
+/*Style for the main text*/
+p {
+    line-height: 1.5;
+    font-size: 18px;
+    font-family: 'Cormorant', serif;
+}
+
+h2, h3 {
+    font-family: 'Cormorant', serif;
+    margin: 1rem 0;
+}
+
+/*Заголовок*/
+/*Heading*/
+h2 a{
+    color: hsl(210, 10%, 23%);
+    font-size: 2rem;
+}
+
+/*Заголовок при наведении*/
+/*Title on hover*/
+h2 a:hover {
+    text-decoration: none;
+    color: hsla(0, 0%, 0%, .4);
+}
+
+/*РАЗДЕЛ ПОСТОВ*/
+/*POSTS SECTION*/
+.grid-posts {
+    margin: 1.5rem 0;
+    margin-bottom: 2.5rem;
+}
+
+.grid-posts .card {
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+/*Выравнивание текста под изображением на всю ширину*/
+/*Full-width text alignment under the image*/
+.grid-posts .card-body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/*Если изображения разных размеров и нам нужно, чтобы все они были одинаковые*/
+/*If the images are of different sizes and we need them all to be the same*/
+.grid-posts .card-img-top {
+    max-height: 350px;
+    border-radius: 0;
+}
+
+/*РАЗДЕЛ КНОПКИ ЗАГРУЗКИ НОВОГО ПОСТА*/
+/*SECTION OF THE BUTTON FOR UPLOADING A NEW POST*/
+.load-more {
+    padding: 1rem 2rem;
+}
+
+/*??????До загрузки скрывает спиннер??????*/
+.load-more span {
+    display: none;
+}
+
+/*РАЗДЕЛ SIGN UP*/
+/*SIGN UP SECTION*/
+.signup {
+    background-color: hsla(0, 0%, 0%, .4);
+    padding-top: 54px;
+    padding-bottom: 70px;
+}
+
+/*Для того чтоб позиционировать относительно*/
+/*In order to position relative to*/
+.signup .form-input {
+    position: relative;
+}
+
+/*Адаптируем границы инпута*/
+/*Adapting the input boundaries*/
+.signup .form-control {
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid hsla(0, 0%, 0%, .4);
+    background-color: transparent; /*прозрачный*/
+    transition: border-bottom .7s linear;
+}
+
+/*убираем тень при фокусировки инпута*/
+/*removing the shadow when focusing the input*/
+.signup .form-control:focus {
+    box-shadow: none;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+}
+
+/*Кнопка будет позиционироваться относительно данного блока*/
+/*The button will be positioned relative to this block*/
+.form-input .btn {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    font-size: 30px;
+    outline: none;
+}
+
+/*ФУТЕР*/
+/*FOOTER*/
+footer {
+    font-family: 'Croissant One', cursive;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: hsl(0, 0%, 90%);
+    padding: 40px 0;
+    color: hsl(210, 10%, 23%);
+}
+
+footer a {
+    color: hsl(210, 10%, 23%);
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: hsla(0, 0%, 0%, .4);
+}
+
+.footer-left a {
+    margin-right: 20px;
+}
+
+.footer-right a {
+    margin-left: 20px;
+}
+
+/*Если изображения взяты разного разрешения, то выравниваем их, чтоб размер всех 
+изображений был одинаковый при масштабировании. В данном проекте это не обязательно
+ибо изображения одного разрешения*/
+/*If the images are taken at different resolutions, then align them so that the size of all images is the same when zooming. In this project, this is not necessary because the images are of the same resolution*/
+@media screen and (max-width: 1199px) {
+    .grid-posts .card-img-top {
+        max-height: 300px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    header .nav-item {
+        margin-right: 2rem;
+    }
+    .grid-posts .card-img-top {
+        max-height: 300px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .grid-posts .card-img-top {
+        max-height: 100%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .footer-left {
+        margin-bottom: .5rem;
+    }
+}
