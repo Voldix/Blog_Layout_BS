@@ -1,4 +1,5 @@
 # Blog_Layout_BS
+# See Live - https://portfolio-simple-layout-blog.netlify.app
 
 ![App Screenshot](/img/blog-screenshot.PNG)
 
